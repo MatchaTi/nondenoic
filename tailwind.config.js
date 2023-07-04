@@ -22,7 +22,7 @@ module.exports = {
         'light-text': '#64748b',
         'dark-base': '#0f172a',
         'dark-main': '#152239',
-        'dark-secondary': '#18273F',
+        'dark-secondary': '#0e121e',
         'dark-accent': '#1b3152',
         'dark-text': '#f1f5f9',
         'code-editor': '#121d2f',

@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .bg-base {
+    @apply bg-light-base dark:bg-dark-base;
+  }
+
+  .bg-base-secondary {
+    @apply bg-light-secondary dark:bg-dark-secondary;
+  }
+}
