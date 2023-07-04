@@ -6,10 +6,11 @@ import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
 import Button from './button';
 
 interface IDarkMode {
+  className?: string;
   visibility?: string;
 }
 
-export default function DarkModeBtn({ visibility }: IDarkMode) {
+export default function DarkModeBtn({ className, visibility }: IDarkMode) {
   const [isMounted, setIsMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -20,7 +21,12 @@ export default function DarkModeBtn({ visibility }: IDarkMode) {
   if (!isMounted) return null;
 
   return (
-    <Button type='button' visibility={visibility} onClick={() => setTheme(theme == 'light' ? 'dark' : 'light')}>
+    <Button
+      type='button'
+      className={className}
+      visibility={visibility}
+      onClick={() => setTheme(theme == 'light' ? 'dark' : 'light')}
+    >
       {theme == 'light' ? <BsFillMoonFill /> : <BsFillSunFill />}
     </Button>
   );

@@ -31,7 +31,7 @@ type ButtonProps = {
 } & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
 const buttonStyle = ({ className, visibility, color, size, corner }: ButtonProps) => {
-  const base = 'flex items-center gap-2 font-semibold duration-150 ease-in-out';
+  const base = 'flex items-center justify-center gap-2 font-semibold duration-150 ease-in-out';
 
   const variants = {
     color: {
