@@ -1,3 +1,5 @@
+import GridBg from '@/components/layout/gridBg';
+import Sidebar from '@/components/layout/sidebar';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Providers from './providers';
@@ -12,8 +14,12 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} bg-base text-light-text dark:text-dark-text`}>
-        <Providers>{children}</Providers>
+      <body className={`${inter.className} bg-base min-h-[4000px] text-light-text dark:text-dark-text`}>
+        <Providers>
+          <GridBg />
+          <Sidebar />
+          {children}
+        </Providers>
       </body>
     </html>
   );
