@@ -28,7 +28,7 @@ export default function PostLayout({ params }: { params: { slug: string } }) {
         <BlurBlob />
         <div className='w-full grid-cols-3 lg:grid'>
           <div className='order-1 mb-10 sm:px-4 lg:col-span-2'>
-            <h1 className='mb-2 text-3xl font-bold'>{post.title}</h1>
+            <h1 className='mb-2 text-lg font-bold sm:text-3xl'>{post.title}</h1>
             <p className='mb-4 opacity-80'>{post.excerpt}</p>
           </div>
           <div className='order-3 mb-10 sm:px-4 lg:col-span-2 lg:mb-0'>
