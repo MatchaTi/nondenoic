@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} bg-base min-h-[4000px] text-light-text dark:text-dark-text`}>
+      <body className={`${inter.className} bg-base min-h-screen text-light-text dark:text-dark-text`}>
         <Providers>
           <GridBg />
           <Sidebar />
