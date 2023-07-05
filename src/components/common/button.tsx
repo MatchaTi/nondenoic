@@ -28,16 +28,19 @@ type ButtonProps = {
   color?: keyof IColors;
   size?: keyof ISizes;
   corner?: keyof ICorners;
+  fullField?: boolean;
 } & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
-const buttonStyle = ({ className, visibility, color, size, corner }: ButtonProps) => {
-  const base = 'flex items-center justify-center gap-2 font-semibold duration-150 ease-in-out';
+const buttonStyle = ({ className, visibility, color, size, corner, fullField }: ButtonProps) => {
+  const base = `${
+    fullField == true && 'w-full'
+  } flex items-center justify-center gap-2 font-semibold duration-150 ease-in-out`;
 
   const variants = {
     color: {
       primary: 'bg-nondenoic-main text-white hover:bg-nondenoic-secondary active:bg-nondenoic-main/50',
       outline:
-        'bg-transparent text-nondenoic-main border-2 border-nondenoic-main hover:bg-nondenoic-main hover:text-white active:bg-nondenoic-main/50',
+        'bg-transparent text-nondenoic-main border-2 border-nondenoic-main hover:bg-nondenoic-main hover:text-white active:bg-nondenoic-main/50 active:border-opacity-0',
       transparent: 'bg-transparent text-nondenoic-main hover:text-nondenoic-secondary active:text-nondenoic-main/50',
     },
     size: {
@@ -71,6 +74,7 @@ export default function Button({
   color = 'primary',
   size = 'md',
   corner = 'md',
+  fullField,
   ...props
 }: ButtonProps) {
   return (
@@ -82,6 +86,7 @@ export default function Button({
         corner,
         className,
         visibility,
+        fullField,
       } as ButtonProps)}`}
     >
       {children}

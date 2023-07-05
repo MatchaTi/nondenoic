@@ -8,9 +8,10 @@ import Button from './button';
 interface IDarkMode {
   className?: string;
   visibility?: string;
+  fullField?: boolean;
 }
 
-export default function DarkModeBtn({ className, visibility }: IDarkMode) {
+export default function DarkModeBtn({ className, visibility, fullField }: IDarkMode) {
   const [isMounted, setIsMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -25,6 +26,7 @@ export default function DarkModeBtn({ className, visibility }: IDarkMode) {
       type='button'
       className={className}
       visibility={visibility}
+      fullField={fullField}
       onClick={() => setTheme(theme == 'light' ? 'dark' : 'light')}
     >
       {theme == 'light' ? <BsFillMoonFill /> : <BsFillSunFill />}
