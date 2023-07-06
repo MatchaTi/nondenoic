@@ -1,4 +1,3 @@
-import BlurBlob from '@/components/common/blurBlob';
 import { mdxComponents } from '@/components/common/mdxComponents';
 import { time } from '@/libs/utils';
 import '@/styles/orbitalEden.css';
@@ -18,14 +17,13 @@ export default function PostLayout({ params }: { params: { slug: string } }) {
   const MDXContent = useMDXComponent(post.body.code);
 
   return (
-    <article className='mt-20 w-full overflow-hidden border-y border-dark-accent/10 dark:border-light-accent/5 lg:mb-28'>
+    <article className='mt-20 w-full border-y border-dark-accent/10 dark:border-light-accent/5 lg:mb-28'>
       <section className='mx-auto w-full max-w-7xl p-4'>
         <div className='mb-10 w-full overflow-hidden'>
           <div className='aspect-video sm:px-4'>
             <Image src={`${post.imagePreview}`} alt={post.title} width={1920} height={1080} className='rounded-xl' />
           </div>
         </div>
-        <BlurBlob />
         <div className='w-full grid-cols-3 lg:grid'>
           <div className='order-1 mb-10 sm:px-4 lg:col-span-2'>
             <h1 className='mb-2 text-lg font-bold sm:text-3xl'>{post.title}</h1>

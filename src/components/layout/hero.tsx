@@ -1,10 +1,7 @@
-import BlurBlob from '../common/blurBlob';
-
 export default function Hero() {
   return (
     <div className='mt-52 w-full border-y border-dark-accent/10 dark:border-light-accent/5 sm:mt-64 lg:mb-28'>
       <section className='mx-auto w-full max-w-7xl p-4 sm:px-8'>
-        <BlurBlob />
         <div className='w-full'>
           <p className='mb-4 text-lg font-semibold text-nondenoic-main'>Welcome to Nondenoic</p>
           <h1 className='mb-4 w-full max-w-xs text-xl font-bold sm:max-w-lg sm:text-3xl xl:max-w-2xl xl:text-5xl'>

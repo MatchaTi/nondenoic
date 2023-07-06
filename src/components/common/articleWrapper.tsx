@@ -17,7 +17,7 @@ export default function ArticleWrapper(post: Post) {
       </Link>
       <div>
         <Link href={post.url}>
-          <h3 className='mb-2 text-xl font-semibold'>{post.title}</h3>
+          <h3 className='mb-2 text-lg font-semibold sm:text-xl'>{post.title}</h3>
         </Link>
         <p className='mb-2 opacity-80'>{post.excerpt}</p>
         <time className='text-sm opacity-80'>Diposting {time(post.date)}</time>
