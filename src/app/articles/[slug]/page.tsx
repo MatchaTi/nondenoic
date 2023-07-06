@@ -18,7 +18,7 @@ export default function PostLayout({ params }: { params: { slug: string } }) {
   const MDXContent = useMDXComponent(post.body.code);
 
   return (
-    <article className='mt-20 w-full border-y border-dark-accent/10 dark:border-light-accent/5 lg:mb-28'>
+    <article className='mt-20 w-full overflow-hidden border-y border-dark-accent/10 dark:border-light-accent/5 lg:mb-28'>
       <section className='mx-auto w-full max-w-7xl p-4'>
         <div className='mb-10 w-full overflow-hidden'>
           <div className='aspect-video sm:px-4'>

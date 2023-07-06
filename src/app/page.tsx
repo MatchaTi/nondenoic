@@ -3,7 +3,7 @@ import Hero from '@/components/layout/hero';
 
 export default function Home() {
   return (
-    <main className='relative z-10 mx-auto min-h-screen w-full'>
+    <main className='relative z-10 mx-auto min-h-screen w-full overflow-hidden'>
       <Hero />
       <PostsList />
     </main>
