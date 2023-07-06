@@ -11,3 +11,15 @@
     @apply bg-light-secondary dark:bg-dark-secondary;
   }
 }
+
+.tech-icon:hover {
+  @apply -mt-5 text-5xl;
+}
+
+.tech-icon:hover + .tech-icon {
+  @apply -mt-2 text-4xl;
+}
+
+.tech-icon:has(+ .tech-icon:hover) {
+  @apply -mt-2 text-4xl;
+}

@@ -13,3 +13,13 @@ export interface DateTimeFormatOptions {
   hour12?: boolean;
   timeZone?: string;
 }
+
+export interface IMyProject {
+  date: string;
+  title: string;
+  desc: string;
+  imagePreview: any;
+  href: string;
+  anchor?: boolean;
+  techStack: React.ReactNode;
+}
