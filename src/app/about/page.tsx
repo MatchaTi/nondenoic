@@ -4,7 +4,7 @@ import { Source_Code_Pro } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AiFillCalendar } from 'react-icons/ai';
-import AuthorImage from '../../../public/images/author-AdiIfai.png';
+import AuthorImage from '../../../public/images/adiifai.png';
 
 const SourceCode = Source_Code_Pro({ subsets: ['latin'] });
 

@@ -29,7 +29,7 @@ export default function PostLayout({ params }: { params: { slug: string } }) {
             <h1 className='mb-2 text-lg font-bold sm:text-3xl'>{post.title}</h1>
             <p className='mb-4 opacity-80'>{post.excerpt}</p>
           </div>
-          <div className='order-3 mb-10 sm:px-4 lg:col-span-2 lg:mb-0'>
+          <div className='custom-prose order-3 mb-10 w-full sm:px-4 lg:col-span-2 lg:mb-0'>
             <MDXContent components={mdxComponents} />
           </div>
           <div className='z-10 order-2 sm:px-4 lg:sticky lg:top-20 lg:px-6'>
@@ -46,16 +46,20 @@ export default function PostLayout({ params }: { params: { slug: string } }) {
             </div>
             <h2 className='mb-4 text-xl font-semibold'>Artikel Lainnya</h2>
             <ul>
-              {anotherPosts.map((post, i) => (
-                <li key={i} className='opacity-80 duration-150 ease-in-out hover:opacity-100'>
-                  <Link href={post.url} className='flex items-center'>
-                    <span className='text-5xl'>
-                      <BsDot />
-                    </span>
-                    <span>{post.title}</span>
-                  </Link>
-                </li>
-              ))}
+              {anotherPosts.length > 0 ? (
+                anotherPosts.map((post, i) => (
+                  <li key={i} className='opacity-80 duration-150 ease-in-out hover:opacity-100'>
+                    <Link href={post.url} className='flex items-center'>
+                      <span className='text-5xl'>
+                        <BsDot />
+                      </span>
+                      <span>{post.title}</span>
+                    </Link>
+                  </li>
+                ))
+              ) : (
+                <div>Belum ada artikel lainnya :(</div>
+              )}
             </ul>
           </div>
         </div>
