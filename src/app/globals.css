@@ -23,3 +23,7 @@
 .tech-icon:has(+ .tech-icon:hover) {
   @apply -mt-2 text-4xl;
 }
+
+.custom-prose {
+  @apply prose max-w-full prose-headings:text-light-text prose-p:text-light-text prose-a:text-nondenoic-main prose-code:rounded prose-code:bg-code-editor prose-code:p-1 prose-code:text-white prose-li:text-light-text prose-headings:dark:text-dark-text prose-p:dark:text-dark-text prose-a:dark:text-nondenoic-main prose-li:dark:text-dark-text;
+}
