@@ -1,0 +1,413 @@
+---
+title: Membuat Sidebar Sederhana Menggunakan Tailwind CSS
+date: 08 Juni 2023
+author: AdiIfai
+authorImage: /images/adiifai.png
+excerpt: Dalam dunia desain web, memiliki sebuah sidebar sangatlah penting untuk meningkatkan pengalaman pengguna dan memudahkan navigasi.
+imagePreview: /images/sidebar-sederhana.jpg
+---
+
+Dalam artikel ini, kita akan menjelajahi cara membuat sidebar yang interaktif menggunakan Tailwind CSS, sebuah framework CSS yang populer dan efisien.
+
+Tailwind CSS menawarkan pendekatan utility-first yang memungkinkan kita untuk dengan mudah mengatur tampilan dan style elemen-elemen
+dalam sidebar. Dengan membaca dan mengikuti langkah-langkah dalam artikel ini, diharapkan teman-teman mendapatkan inspirasi
+tentang cara membuat sidebar yang menarik dan interaktif menggunakan Tailwind CSS. Mari kita mulai dan tingkatkan desain
+web kita dengan sidebar yang keren dan fungsional!
+
+Sebelum kita memulai ngoding, pertama-tama kita perlu mengatur proyek kita terlebih dahulu. Untuk instalasi Tailwind CSS kalian bisa baca di dokumentasi resminya [Tailwind CSS](https://tailwindcss.com/docs/installation) yaa.
+
+Sekarang setelah proyek kita sudah terkonfigurasi dengan Tailwind CSS, langkah selanjutnya adalah membuat struktur HTML untuk sidebar kita. Berikut adalah langkah-langkahnya:
+
+### Main Container
+
+Pertama, kita akan membuat struktur HTMLnya terlebih dahulu:
+
+`Code:`
+
+```html
+<div>
+  <aside>Sidebar</aside>
+  <div>Content</div>
+</div>
+```
+
+`Output:`
+
+<div className='w-full overflow-hidden rounded-lg border border-white/10'>
+  <div className='h-[440px] bg-white'>
+    <aside>Sidebar</aside>
+    <div>Content</div>
+  </div>
+</div>
+
+Secara default elemen akan bertumpuk ke bawah, tetapi tenang aja kita akan menggunakan `flex` dari class utilty dari Tailwind yang membuat elemen children menjadi sejajar secara horizontal dengan perilaku dasar dari `flex-direction: row`:
+
+`Code:`
+
+```html
+<div class="flex">
+  <aside>Sidebar</aside>
+  <div>Content</div>
+</div>
+```
+
+`Output:`
+
+<div className='w-full overflow-hidden rounded-lg border border-white/10'>
+  <div className='flex h-[440px] bg-white'>
+    <aside>Sidebar</aside>
+    <div>Content</div>
+  </div>
+</div>
+
+Oke selanjutnya kita akan memberikan dimensi tinggi untuk container:
+
+```html
+<div class="flex h-screen">
+  <aside>Sidebar</aside>
+  <div>Content</div>
+</div>
+```
+
+### Sidebar Container
+
+Oke sekarang kita sudah selesai dengan container kita, mari kita lanjutkan untuk styling sidebar kece kita 😎. Kita mulai dengan memberikan dimensi lebar dan tinggi sidebar, memberikan warna backgroud serta memberikan beberapa class pendukung:
+
+`Code:`
+
+```html
+<div class="flex h-screen">
+  <aside class="h-full w-[3.35rem] bg-slate-900 p-1.5 text-white">Sidebar</aside>
+  <div>Content</div>
+</div>
+```
+
+`Output:`
+
+<div className='w-full overflow-hidden rounded-lg border border-white/10'>
+  <div className='flex h-[440px] bg-white'>
+    <aside className='h-full w-[3.35rem] bg-slate-900 p-1.5 text-white'>Sidebar</aside>
+    <div>Content</div>
+  </div>
+</div>
+
+Uuuuu sudah mulai terlihat ya hasilnya, sekarang kita akan memulai bagian yang serunya nih yaitu animasi interaktivitas ketika cursor mouse hover ke sidebar, sidebar akan melebar dan ketika cursor mouse meninggalkan sidebar lebar sidebar akan kembali ke lebar asalnya:
+
+`Code:`
+
+```html
+<div class="flex h-screen">
+  <aside class="flex h-full w-[3.35rem] flex-col bg-slate-900 p-1.5 text-white duration-300 ease-in-out hover:w-56">
+    Sidebar
+  </aside>
+  <div>Content</div>
+</div>
+```
+
+`Output:`
+
+<div className='w-full overflow-hidden rounded-lg border border-white/10'>
+  <div className='flex h-[440px] bg-white'>
+    <aside className='flex h-full w-[3.35rem] flex-col bg-slate-900 p-1.5 text-white duration-300 ease-in-out hover:w-56'>
+      <span>Sidebar</span>
+    </aside>
+    <div>Content</div>
+  </div>
+</div>
+
+Anjay keren tidak cuy😎, saya akan menjelaskan 5 class utility Tailwind yang baru saja kita tambahkan:
+
+- `duration-300` membuat durasi animasi selama 300ms,
+- `ease-in-out` memberikan efek transisi yang mulus dengan perpindahan yang perlahan di awal animasi, mempercepat di tengah animasi, dan melambat kembali di akhir animasi,
+- `hover:w-56` ketika cursor mouse berada di elemen sidebar, sidebar akan melebar sebanyak `224px` yang semula `54px`,
+- `flex` dan `flex-col` membuat elemen children yang nantinya akan menjadi sejajar secara vertical.
+
+### Sidebar Children Elements
+
+Sekarang kita lanjut untuk elemen children sidebar, kita mulai dengan membuat placeholder untuk icon dan title:
+
+`Code:`
+
+```html
+<div class="flex h-screen">
+  <aside class="flex h-full w-[3.35rem] flex-col bg-slate-900 p-1.5 text-white duration-300 ease-in-out hover:w-56">
+    <div class="flex min-w-max cursor-pointer items-center gap-4">
+      <div class="h-10 w-10 rounded bg-blue-500">{Icon Kalian}</div>
+      <div>
+        <div>Sidebar</div>
+        <div class="text-xs opacity-75">Front End Developer</div>
+      </div>
+    </div>
+  </aside>
+  <div>Content</div>
+</div>
+```
+
+`Output:`
+
+<div className='w-full overflow-hidden rounded-lg border border-white/10'>
+  <div className='flex h-[440px] bg-white'>
+    <aside className='flex h-full w-[3.35rem] flex-col bg-slate-900 p-1.5 duration-300 ease-in-out hover:w-56 hover:text-white'>
+      <div className='flex min-w-max cursor-pointer items-center gap-4'>
+        <div className='h-10 w-10 rounded bg-blue-500'></div>
+        <div>
+          <div>Sidebar</div>
+          <div className='text-xs opacity-75'>Front End Developer</div>
+        </div>
+      </div>
+    </aside>
+    <div>Content</div>
+  </div>
+</div>
+
+Ooopss!!! Kok ada yang keluar??? Karena pada wrapper elemen children kita memberikan class `min-w-max` yang artinya elemen akan memiliki lebar minimal maximal content di dalamnya dan tetap mempertahankan lebarnya meskipun lebar container sidebar tidak cukup untuk meng-cover elemen children. Untuk mengatasinya cukup gampang, kita cukup memberikan class `overflow-hidden` pada container sidebar:
+
+`Code:`
+
+```html
+<aside
+  class="flex h-full w-[3.35rem] flex-col overflow-hidden bg-slate-900 p-1.5 text-white duration-300 ease-in-out hover:w-56"
+>
+  {children}
+</aside>
+```
+
+`Output:`
+
+<div className='w-full overflow-hidden rounded-lg border border-white/10'>
+  <div className='flex h-[440px] bg-white'>
+    <aside className='flex h-full w-[3.35rem] flex-col overflow-hidden bg-slate-900 p-1.5 text-white duration-300 ease-in-out hover:w-56'>
+      <div className='flex min-w-max cursor-pointer items-center gap-4'>
+        <div className='h-10 w-10 rounded bg-blue-500'></div>
+        <div>
+          <div>Sidebar</div>
+          <div className='text-xs opacity-75'>Front End Developer</div>
+        </div>
+      </div>
+    </aside>
+    <div>Content</div>
+  </div>
+</div>
+
+Oke masalah overflow sudah teratasi, sebelum kita melanjutkan membuat elemen children lainnya, kita akan menambahkan class `group` pada elemen parent yaitu sidebar container. Tujuannya untuk memudahkan styling elemen children ketika elemen parent memiliki event, misalnya di kasus kita sidebar memiliki event hover:
+
+`Code:`
+
+```html
+<aside
+  class="group flex h-full w-[3.35rem] flex-col overflow-hidden bg-slate-900 p-1.5 text-white duration-300 ease-in-out hover:w-56"
+>
+  {children}
+</aside>
+```
+
+Mantap! Sekarang kita mulai membuat element childrennya:
+
+`Code:`
+
+```html
+<div class="flex h-screen">
+  <aside
+    class="flex h-full w-[3.35rem] flex-col overflow-hidden bg-slate-900 p-1.5 text-white duration-300 ease-in-out hover:w-56"
+  >
+    <div class="flex min-w-max cursor-pointer items-center gap-4">
+      <div class="h-10 w-10 rounded bg-blue-500">{Icon Kalian}</div>
+      <div>
+        <div>Sidebar</div>
+        <div class="text-xs opacity-75">Front End Developer</div>
+      </div>
+    </div>
+    <div
+      class="mt-4 flex min-w-max items-center gap-4 rounded bg-white/5 p-2 duration-300 ease-in-out group-hover:px-4"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-6 w-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+        />
+      </svg>
+      <div class="hidden text-sm opacity-50 group-hover:block">Search...</div>
+    </div>
+  </aside>
+  <div>Content</div>
+</div>
+```
+
+`Output:`
+
+<div className='w-full overflow-hidden rounded-lg border border-white/10'>
+  <div className='flex h-[440px] bg-white'>
+    <aside className='group flex h-full w-[3.35rem] flex-col bg-slate-900 p-1.5 text-white duration-300 ease-in-out hover:w-56'>
+      <div className='flex min-w-max cursor-pointer items-center gap-4'>
+        <div className='h-10 w-10 rounded bg-blue-500'></div>
+        <div>
+          <div>Sidebar</div>
+          <div className='text-xs opacity-75'>Front End Developer</div>
+        </div>
+      </div>
+      <div className='mt-4 flex min-w-max items-center gap-4 rounded bg-white/5 p-2 duration-300 ease-in-out group-hover:px-4'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          strokeWidth={1.5}
+          stroke='currentColor'
+          className='h-6 w-6 opacity-50'
+        >
+          <path
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            d='M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z'
+          />
+        </svg>
+        <div className='hidden text-sm opacity-50 group-hover:block'>Search...</div>
+      </div>
+    </aside>
+    <div>Content</div>
+  </div>
+</div>
+
+Karena kita di awal menambahkan class `group` pada element parent, kita mempunyai akses class `group-{event}` pada element children ketika group terjadi event dalam kasus kita ketika group di-hover. Dan di event ini kita ambil contoh element children yang ini:
+
+```html
+<div class="hidden text-sm opacity-50 group-hover:block">Search...</div>
+```
+
+Elemen children di atas mula-mula memiliki `display: none;` karena kita memberikan class `hidden`. Dan ketika element parent yang memiliki class `group` di-hover yaitu sidebar, ubah style element children di atas menjadi `display: block` dengan memberikan class `block`.
+
+### Final Project
+
+`Code:`
+
+```html
+<div class="w-full overflow-hidden rounded-lg border border-white/10">
+  <div class="flex h-[440px] bg-white">
+    <aside
+      class="group flex h-full w-[3.35rem] flex-col bg-slate-900 p-1.5 text-white duration-300 ease-in-out hover:w-56"
+    >
+      <div class="flex min-w-max cursor-pointer items-center gap-4">
+        <div class="h-10 w-10 rounded bg-blue-500"></div>
+        <div>
+          <div>Sidebar</div>
+          <div class="text-xs opacity-75">Front End Developer</div>
+        </div>
+      </div>
+      <div
+        class="mt-4 flex min-w-max items-center gap-4 rounded bg-white/5 p-2 duration-300 ease-in-out group-hover:px-4"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-6 w-6 opacity-50"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+          ></path>
+        </svg>
+        <div class="hidden text-sm opacity-50 group-hover:block">Search...</div>
+      </div>
+      <div class="border-b border-white/5 pb-2">
+        <div
+          class="mt-4 flex min-w-max cursor-pointer items-center gap-4 rounded p-2 opacity-50 duration-300 ease-in-out hover:bg-white/5 hover:opacity-100 group-hover:px-4"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+            />
+          </svg>
+          <div class="hidden text-sm group-hover:block">Home</div>
+        </div>
+        <div
+          class="mt-4 flex min-w-max cursor-pointer items-center gap-4 rounded p-2 opacity-50 duration-300 ease-in-out hover:bg-white/5 hover:opacity-100 group-hover:px-4"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
+            ></path>
+          </svg>
+          <div class="hidden text-sm group-hover:block">Bookmark</div>
+        </div>
+      </div>
+      <div class="flex-1">
+        <div
+          class="mt-4 flex min-w-max cursor-pointer items-center gap-4 rounded p-2 opacity-50 duration-300 ease-in-out hover:bg-white/5 hover:opacity-100 group-hover:px-4"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+            ></path>
+          </svg>
+          <div class="hidden text-sm group-hover:block">Profile</div>
+        </div>
+        <div
+          class="mt-4 flex min-w-max cursor-pointer items-center gap-4 rounded p-2 opacity-50 duration-300 ease-in-out hover:bg-white/5 hover:opacity-100 group-hover:px-4"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
+            ></path>
+          </svg>
+          <div class="hidden text-sm group-hover:block">Sign Out</div>
+        </div>
+      </div>
+      <div className="w-full rounded bg-blue-500 py-2">{Icon Kamu}</div>
+    </aside>
+    <div class="flex-1 p-4">Content</div>
+  </div>
+</div>
+```
+
+`Output:`
+
+<Sidebar />
+
+Sekian dari artikel kali ini tentang membuat sidebar yang sederhana, terima kasih telah berkunjung semoga kalian mendapatkan inspirasi bagaimana cara styling sidebar. Sampai jumpa di artikel lainnya, bye-bye 👋.
