@@ -208,7 +208,7 @@ Mantap! Sekarang kita mulai membuat element childrennya:
 ```html
 <div class="flex h-screen">
   <aside
-    class="flex h-full w-[3.35rem] flex-col overflow-hidden bg-slate-900 p-1.5 text-white duration-300 ease-in-out hover:w-56"
+    class="group flex h-full w-[3.35rem] flex-col overflow-hidden bg-slate-900 p-1.5 text-white duration-300 ease-in-out hover:w-56"
   >
     <div class="flex min-w-max cursor-pointer items-center gap-4">
       <div class="h-10 w-10 rounded bg-blue-500">{Icon Kalian}</div>
@@ -399,7 +399,7 @@ Elemen children di atas mula-mula memiliki `display: none;` karena kita memberik
           <div class="hidden text-sm group-hover:block">Sign Out</div>
         </div>
       </div>
-      <div className="w-full rounded bg-blue-500 py-2">{Icon Kamu}</div>
+      <div class="w-full rounded bg-blue-500 py-2">{Icon Kamu}</div>
     </aside>
     <div class="flex-1 p-4">Content</div>
   </div>

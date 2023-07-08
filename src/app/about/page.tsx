@@ -38,7 +38,7 @@ export default function About() {
                   <span>
                     <AiFillCalendar />
                   </span>
-                  <span className='font-medium'>Starting journey Juny, 26 2022</span>
+                  <span className='font-medium'>Starting journey November, 26 2022</span>
                 </div>
               </div>
               <p className='mb-4 opacity-80'>
