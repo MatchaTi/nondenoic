@@ -23,7 +23,7 @@ export default function Skillset() {
     <div className='min-h-screen w-full snap-start bg-dark-base'>
       <section className='mx-auto h-full w-full max-w-7xl p-8'>
         <h2
-          className={`${jetBrains.className} text-center text-2xl font-bold underline decoration-nondenoic-main underline-offset-8 sm:mt-20 sm:text-3xl xl:text-4xl`}
+          className={`${jetBrains.className} text-center text-2xl font-bold text-dark-headings underline decoration-nondenoic-main underline-offset-8 sm:mt-20 sm:text-3xl xl:text-4xl`}
         >
           My Skills
         </h2>
@@ -34,7 +34,7 @@ export default function Skillset() {
                 <div className={`${color} relative z-10 mx-auto flex justify-center text-5xl lg:text-7xl`}>{icon}</div>
                 <div className='absolute left-0 top-0 h-full w-full rotate-45 rounded-3xl border border-neutral-100/5 bg-dark-secondary'></div>
               </div>
-              <div className='mt-6 text-center font-semibold lg:mt-8 lg:text-xl'>{label}</div>
+              <div className='mt-6 text-center font-semibold text-dark-text lg:mt-8 lg:text-xl'>{label}</div>
             </div>
           ))}
         </div>
