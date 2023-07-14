@@ -1,17 +1,19 @@
+import { JetBrains_Mono } from 'next/font/google';
+
+const jetBrains = JetBrains_Mono({ subsets: ['latin'] });
+
 export default function Hero() {
   return (
-    <div className='mt-52 w-full border-y border-dark-accent/10 dark:border-light-accent/5 sm:mt-64 lg:mb-28'>
-      <section className='mx-auto w-full max-w-7xl p-4 sm:px-8'>
-        <div className='w-full'>
-          <p className='mb-4 text-lg font-semibold text-nondenoic-main'>Welcome to Nondenoic</p>
-          <h1 className='mb-4 w-full max-w-xs text-xl font-bold sm:max-w-lg sm:text-3xl xl:max-w-2xl xl:text-5xl'>
-            Tempat dimana web design dan web styling bersinar dalam setiap pixel.
-          </h1>
-          <p className='w-full max-w-xl opacity-80'>
-            Ayo berpetualang di tempat yang dipenuhi dengan inspirasi web design dan web styling yang kece badai. Di
-            artikel ini, kita akan menggali sumber-sumber inspirasi yang keren badai, menemukan tren terbaru, dan
-            menyajikan tips praktis untuk mewujudkan desain web yang memanjakan mata.
-          </p>
+    <div className='h-screen w-full snap-start bg-dark-base'>
+      <section className='mx-auto grid h-full w-full max-w-7xl grid-rows-3 flex-col items-center p-4'>
+        <h1
+          className={`${jetBrains.className} row-start-2 justify-self-center text-5xl font-bold text-dark-headings sm:text-6xl xl:text-7xl`}
+        >
+          Nondenoic
+        </h1>
+        <div className='row-start-3 self-end sm:justify-self-center sm:text-center'>
+          <h2 className='text-xl font-semibold text-dark-headings'>Adi Muhammad Syifai</h2>
+          <p className={`${jetBrains.className} text-dark-text`}>Portfolio</p>
         </div>
       </section>
     </div>
