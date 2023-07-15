@@ -30,7 +30,7 @@ export default function RecentProjects() {
               >
                 Nondenoic
               </div>
-              <div className='aspect-square h-full overflow-hidden rounded-lg md:aspect-auto md:h-[275px] '>
+              <div className='aspect-square h-full overflow-hidden rounded-lg md:aspect-auto md:h-[275px]'>
                 <Image src={Nondenoic} alt='Nondenoic' className='h-full w-full object-cover' />
               </div>
             </Link>
@@ -44,7 +44,7 @@ export default function RecentProjects() {
               >
                 Kalkulator Kesehatan
               </div>
-              <div className='aspect-square h-full overflow-hidden rounded-lg md:aspect-auto md:h-[275px] '>
+              <div className='aspect-square h-full overflow-hidden rounded-lg md:aspect-auto md:h-[275px]'>
                 <Image src={KalkulatorKesehatan} alt='Kalkulator Kesehatan' className='h-full w-full object-cover' />
               </div>
             </a>
@@ -58,7 +58,7 @@ export default function RecentProjects() {
               >
                 Roselia Theme
               </div>
-              <div className='aspect-square h-full overflow-hidden rounded-lg md:aspect-auto md:h-[275px] '>
+              <div className='aspect-square h-full overflow-hidden rounded-lg md:aspect-auto md:h-[275px]'>
                 <Image src={Roselia} alt='Roselia Theme' className='h-full w-full object-cover' />
               </div>
             </a>
@@ -67,6 +67,11 @@ export default function RecentProjects() {
             >
               2023 - now
             </div>
+          </div>
+          <div
+            className={`${jetBrains.className} mt-4 font-semibold text-light-headings underline underline-offset-8 md:self-start`}
+          >
+            2023 - now
           </div>
         </div>
       </section>
