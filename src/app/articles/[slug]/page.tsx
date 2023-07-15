@@ -26,7 +26,7 @@ export default function PostLayout({ params }: { params: { slug: string } }) {
         </div>
         <div className='w-full grid-cols-3 lg:grid'>
           <div className='order-1 mb-10 sm:px-4 lg:col-span-2'>
-            <h1 className='mb-2 text-lg font-bold sm:text-3xl'>{post.title}</h1>
+            <h1 className='mb-2 text-lg font-bold text-dark-headings sm:text-3xl'>{post.title}</h1>
             <p className='mb-4 opacity-80'>{post.excerpt}</p>
           </div>
           <div className='custom-prose order-3 mb-10 w-full sm:px-4 lg:col-span-2 lg:mb-0'>
@@ -34,10 +34,10 @@ export default function PostLayout({ params }: { params: { slug: string } }) {
           </div>
           <div className='z-10 order-2 sm:px-4 lg:sticky lg:top-20 lg:px-6'>
             <div className='mb-4 border-b border-light-accent/5 pb-4'>
-              <div className='text-lg font-semibold'>{post.author}</div>
+              <div className='text-lg font-semibold text-dark-headings'>{post.author}</div>
               <time className='text-sm opacity-80'>Diposting {time(post.date)}</time>
             </div>
-            <h2 className='mb-4 text-xl font-semibold'>Artikel Lainnya</h2>
+            <h2 className='mb-4 text-xl font-semibold text-dark-headings'>Artikel Lainnya</h2>
             <ul>
               {anotherPosts.length > 0 ? (
                 anotherPosts.map((post, i) => (

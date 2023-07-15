@@ -1,3 +1,4 @@
+import Footer from '@/components/layout/footer';
 import GridBg from '@/components/layout/gridBg';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -5,6 +6,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <div>
       <GridBg />
       {children}
+      <Footer />
     </div>
   );
 }
