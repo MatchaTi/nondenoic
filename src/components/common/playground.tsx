@@ -1,4 +1,5 @@
-import DarkModeBtn from './darkModeBtn';
+import { BsFillMoonFill } from 'react-icons/bs';
+import Button from './button';
 
 export function Sidebar() {
   return (
@@ -101,7 +102,9 @@ export function Sidebar() {
               <div className='hidden text-sm group-hover:block'>Sign Out</div>
             </div>
           </div>
-          <DarkModeBtn fullField={true} />
+          <Button fullField>
+            <BsFillMoonFill />
+          </Button>
         </aside>
         <div className='flex-1 p-4'>Content</div>
       </div>
