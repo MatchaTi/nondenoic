@@ -4,40 +4,38 @@ const jetBrains = JetBrains_Mono({ subsets: ['latin'] });
 
 export default function Gallery() {
   return (
-    <div className='min-h-screen w-full snap-start scroll-mb-40 bg-dark-base pb-40'>
+    <div className='relative min-h-screen w-full snap-start bg-dark-base py-8 lg:h-screen'>
       <section className='mx-auto h-full w-full max-w-7xl p-8'>
-        <div className='grid gap-10 sm:grid-cols-2 md:grid-cols-4'>
-          <h2
-            className={`${jetBrains.className} col-span-full text-2xl font-bold text-dark-headings underline decoration-nondenoic-main underline-offset-8 sm:col-span-1 sm:self-center sm:justify-self-center sm:text-3xl md:col-span-2 md:row-span-2 md:text-4xl xl:text-7xl`}
-          >
-            Gallery
-          </h2>
-          <div className='clipped-container flex aspect-square items-center justify-center bg-dark-secondary md:col-start-4'>
-            <div className='clipped h-full w-full duration-300 ease-in-out'>Coming Soon</div>
+        <div className='grid h-full gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-12'>
+          <div className='w-full space-y-4 text-center sm:text-left lg:col-span-4 lg:col-start-5 lg:row-span-4 lg:row-start-5'>
+            <h2 className={`${jetBrains.className} text-xl font-bold text-dark-headings lg:text-3xl`}>{"Let's"}</h2>
+            <h2 className={`${jetBrains.className} text-5xl font-semibold text-dark-headings lg:text-7xl`}>
+              Explore Gallery.
+            </h2>
           </div>
-          <div className='clipped-container flex aspect-square items-center justify-center bg-dark-secondary md:col-start-3'>
-            <div className='clipped h-full w-full duration-300 ease-in-out'>Coming Soon</div>
+          <div className='clipped-container flex h-52 items-center justify-center bg-dark-secondary lg:col-span-3 lg:col-start-2 lg:row-span-3 lg:row-start-2 lg:h-auto'>
+            <div className={`${jetBrains.className} clipped font-semibold duration-300 ease-in-out`}>Comming Soon.</div>
           </div>
-          <div className='clipped-container flex aspect-square items-center justify-center bg-dark-secondary'>
-            <div className='clipped h-full w-full duration-300 ease-in-out'>Coming Soon</div>
+          <div className='clipped-container flex h-52 items-center justify-center bg-dark-secondary lg:col-span-3 lg:col-start-5 lg:row-span-3 lg:row-start-1 lg:h-auto'>
+            <div className={`${jetBrains.className} clipped font-semibold duration-300 ease-in-out`}>Comming Soon.</div>
           </div>
-          <div className='clipped-container flex aspect-square items-center justify-center bg-dark-secondary md:col-start-2'>
-            <div className='clipped h-full w-full duration-300 ease-in-out'>Coming Soon</div>
+          <div className='clipped-container flex h-52 items-center justify-center bg-dark-secondary lg:col-span-3 lg:col-start-9 lg:row-span-3 lg:row-start-2 lg:h-auto'>
+            <div className={`${jetBrains.className} clipped font-semibold duration-300 ease-in-out`}>Comming Soon.</div>
           </div>
-          <div className='clipped-container flex aspect-square items-center justify-center bg-dark-secondary'>
-            <div className='clipped h-full w-full duration-300 ease-in-out'>Coming Soon</div>
+          <div className='clipped-container flex h-52 items-center justify-center bg-dark-secondary lg:col-span-3 lg:col-start-10 lg:row-span-3 lg:row-start-5 lg:h-auto'>
+            <div className={`${jetBrains.className} clipped font-semibold duration-300 ease-in-out`}>Comming Soon.</div>
           </div>
-          <div className='clipped-container flex aspect-square items-center justify-center bg-dark-secondary'>
-            <div className='clipped h-full w-full duration-300 ease-in-out'>Coming Soon</div>
+          <div className='clipped-container flex h-52 items-center justify-center bg-dark-secondary lg:col-span-3 lg:col-start-2 lg:row-span-3 lg:row-start-9 lg:h-auto'>
+            <div className={`${jetBrains.className} clipped font-semibold duration-300 ease-in-out`}>Comming Soon.</div>
           </div>
-          <div className='clipped-container flex aspect-square items-center justify-center bg-dark-secondary'>
-            <div className='clipped h-full w-full duration-300 ease-in-out'>Coming Soon</div>
+          <div className='clipped-container flex h-52 items-center justify-center bg-dark-secondary lg:col-span-3 lg:col-start-1 lg:row-span-3 lg:row-start-6 lg:h-auto'>
+            <div className={`${jetBrains.className} clipped font-semibold duration-300 ease-in-out`}>Comming Soon.</div>
           </div>
-          <div className='clipped-container flex aspect-square items-center justify-center bg-dark-secondary'>
-            <div className='clipped h-full w-full duration-300 ease-in-out'>Coming Soon</div>
+          <div className='clipped-container flex h-52 items-center justify-center bg-dark-secondary lg:col-span-3 lg:col-start-9 lg:row-span-3 lg:row-start-9 lg:h-auto'>
+            <div className={`${jetBrains.className} clipped font-semibold duration-300 ease-in-out`}>Comming Soon.</div>
           </div>
-          <div className='clipped-container flex aspect-square items-center justify-center bg-dark-secondary'>
-            <div className='clipped h-full w-full duration-300 ease-in-out'>Coming Soon</div>
+          <div className='clipped-container flex h-52 items-center justify-center bg-dark-secondary lg:col-span-3 lg:col-start-6 lg:row-span-3 lg:row-start-10 lg:h-auto'>
+            <div className={`${jetBrains.className} clipped font-semibold duration-300 ease-in-out`}>Comming Soon.</div>
           </div>
         </div>
       </section>
