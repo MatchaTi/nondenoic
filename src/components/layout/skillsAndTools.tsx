@@ -16,8 +16,8 @@ export default function SkillsAndTools() {
   return (
     <div className='relative h-screen w-full snap-start bg-dark-base py-8'>
       <section className='mx-auto h-full w-full max-w-4xl p-8'>
-        <div className='grid h-full gap-1 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-12'>
-          <div className='flex items-center justify-center gap-4 text-3xl text-dark-text sm:flex-col sm:gap-0 sm:text-4xl lg:col-span-3 lg:col-start-7 lg:row-span-3 lg:row-start-4 lg:text-5xl'>
+        <div className='grid h-full grid-cols-2 gap-1 lg:grid-cols-12 lg:grid-rows-12'>
+          <div className='col-span-2 flex flex-col items-center justify-center text-3xl text-dark-text sm:text-4xl lg:col-span-3 lg:col-start-7 lg:row-span-3 lg:row-start-4 lg:text-5xl'>
             <h2 className={`${jetBrains.className} font-bold text-dark-headings`}>Skills</h2>
             <h2 className={`${jetBrains.className} font-bold text-dark-headings`}>&</h2>
             <h2 className={`${jetBrains.className} font-bold text-dark-headings`}>Tools</h2>
