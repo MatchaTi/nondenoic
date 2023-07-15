@@ -17,7 +17,7 @@ export default function PostLayout({ params }: { params: { slug: string } }) {
   const MDXContent = useMDXComponent(post.body.code);
 
   return (
-    <article className='mt-20 w-full border-y border-dark-accent/10 dark:border-light-accent/5 lg:mb-28'>
+    <article className='mt-20 w-full border-y border-light-accent/5 lg:mb-28'>
       <section className='mx-auto w-full max-w-7xl p-4'>
         <div className='mb-10 w-full overflow-hidden'>
           <div className='aspect-video sm:px-4'>
@@ -33,16 +33,9 @@ export default function PostLayout({ params }: { params: { slug: string } }) {
             <MDXContent components={mdxComponents} />
           </div>
           <div className='z-10 order-2 sm:px-4 lg:sticky lg:top-20 lg:px-6'>
-            <div className='mb-4 border-b border-dark-accent/10 pb-4 dark:border-light-accent/5'>
-              <div className='flex items-center gap-4'>
-                <div className='h-20 w-20 overflow-hidden rounded-lg'>
-                  <Image src={`${post.authorImage}`} alt={post.author} width={600} height={600} />
-                </div>
-                <div>
-                  <div className='text-lg font-semibold'>{post.author}</div>
-                  <time className='text-sm opacity-80'>Diposting {time(post.date)}</time>
-                </div>
-              </div>
+            <div className='mb-4 border-b border-light-accent/5 pb-4'>
+              <div className='text-lg font-semibold'>{post.author}</div>
+              <time className='text-sm opacity-80'>Diposting {time(post.date)}</time>
             </div>
             <h2 className='mb-4 text-xl font-semibold'>Artikel Lainnya</h2>
             <ul>
