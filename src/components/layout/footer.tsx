@@ -3,7 +3,7 @@ import NondenoicIcon from '../../../public/images/nondenoic-icon.svg';
 
 export default function Footer() {
   return (
-    <footer className='bg-base-secondary relative -z-20 w-full border-t border-dark-accent/10 dark:border-light-accent/5'>
+    <footer className='bg-base-secondary relative -z-20 w-full snap-end border-t border-light-accent/5'>
       <div className='mx-auto w-full max-w-7xl px-4'>
         <div className='flex w-full flex-wrap items-center justify-between gap-4 py-6 sm:gap-0 lg:px-4'>
           <div className='h-10 w-10 rounded'>
