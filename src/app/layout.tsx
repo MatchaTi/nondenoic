@@ -1,6 +1,3 @@
-import BlurBlob from '@/components/common/blurBlob';
-import Footer from '@/components/layout/footer';
-import GridBg from '@/components/layout/gridBg';
 import Sidebar from '@/components/layout/sidebar';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -15,14 +12,11 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
-      <body className={`${inter.className} bg-base min-h-screen text-light-text dark:text-dark-text`}>
+    <html lang='en' className='dark'>
+      <body className={`${inter.className} min-h-screen antialiased`}>
         <Providers>
-          <BlurBlob />
-          <GridBg />
           <Sidebar />
           {children}
-          <Footer />
         </Providers>
       </body>
     </html>
