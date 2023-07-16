@@ -68,11 +68,6 @@ export default function RecentProjects() {
               2023 - now
             </div>
           </div>
-          <div
-            className={`${jetBrains.className} mt-4 font-semibold text-light-headings underline underline-offset-8 md:self-start`}
-          >
-            2023 - now
-          </div>
         </div>
       </section>
     </div>

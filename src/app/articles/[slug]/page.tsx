@@ -27,7 +27,7 @@ export default function PostLayout({ params }: { params: { slug: string } }) {
         <div className='w-full grid-cols-3 lg:grid'>
           <div className='order-1 mb-10 sm:px-4 lg:col-span-2'>
             <h1 className='mb-2 text-lg font-bold text-dark-headings sm:text-3xl'>{post.title}</h1>
-            <p className='mb-4 opacity-80'>{post.excerpt}</p>
+            <p className='mb-4'>{post.excerpt}</p>
           </div>
           <div className='custom-prose order-3 mb-10 w-full sm:px-4 lg:col-span-2 lg:mb-0'>
             <MDXContent components={mdxComponents} />
