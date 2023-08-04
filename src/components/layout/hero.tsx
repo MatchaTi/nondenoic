@@ -1,21 +1,32 @@
-import { JetBrains_Mono } from 'next/font/google';
+import { Source_Code_Pro } from 'next/font/google';
 
-const jetBrains = JetBrains_Mono({ subsets: ['latin'] });
+const sourceCode = Source_Code_Pro({ subsets: ['latin'] });
 
 export default function Hero() {
   return (
-    <div className='h-screen w-full snap-start bg-dark-base'>
-      <section className='mx-auto grid h-full w-full max-w-7xl grid-rows-3 items-center p-8'>
+    <section className='mt-52 flex w-full items-center justify-center gap-20 lg:mt-0 lg:h-screen'>
+      <div className='grid grid-cols-3 gap-4 px-8 text-center'>
         <h1
-          className={`${jetBrains.className} row-start-2 justify-self-center text-5xl font-bold text-dark-headings sm:text-6xl xl:text-7xl`}
+          className={`${sourceCode.className} col-span-3 text-4xl font-bold leading-relaxed text-neutral-700 lg:text-6xl xl:text-7xl`}
         >
-          Nondenoic
+          Adi Muhammad Syifai
         </h1>
-        <div className='row-start-3 self-end sm:justify-self-center sm:text-center'>
-          <h2 className='text-xl font-semibold text-dark-headings'>Adi Muhammad Syifai</h2>
-          <p className={`${jetBrains.className} text-dark-text`}>Portfolio</p>
-        </div>
-      </section>
-    </div>
+        <h1
+          className={`${sourceCode.className} col-span-3 self-center text-4xl font-bold text-neutral-800 sm:col-span-1 lg:text-6xl xl:text-7xl`}
+        >
+          Portfolio
+        </h1>
+        <h1
+          className={`${sourceCode.className} col-span-3 row-start-3 text-4xl font-bold text-neutral-900 lg:text-6xl xl:text-7xl`}
+        >
+          Nondenoic.
+        </h1>
+        <h1 className='text-balance col-span-3 max-w-xl self-center justify-self-center leading-relaxed text-neutral-500 sm:col-span-2 sm:row-start-2'>
+          Ngide aja dulu. Kreativitas tidak mengenal batas, dan begitulah saya menemukan kebahagiaan dalam mengembara di
+          dunia desain dan koding. Saya percaya bahwa setiap proyek adalah panggung untuk menyuarakan ide-ide yang luar
+          biasa dan merangkai karya-karya yang tak terlupakan.
+        </h1>
+      </div>
+    </section>
   );
 }
