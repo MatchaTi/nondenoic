@@ -1,75 +1,74 @@
-import { JetBrains_Mono } from 'next/font/google';
+import { Source_Code_Pro } from 'next/font/google';
 import Image from 'next/image';
-import Link from 'next/link';
 import KalkulatorKesehatan from '../../../public/images/kalkulator-kesehatan-project.png';
 import Nondenoic from '../../../public/images/nondenoic-project.png';
 import Roselia from '../../../public/images/roselia-theme-project.png';
 
-const jetBrains = JetBrains_Mono({ subsets: ['latin'] });
+const sourceCode = Source_Code_Pro({ subsets: ['latin'] });
 
 export default function RecentProjects() {
   return (
-    <div className='h-screen w-full snap-start bg-light-base py-8'>
-      <section className='mx-auto grid h-full w-full max-w-7xl items-center p-8'>
-        <div>
-          <div className='mb-4 space-y-4 text-3xl text-light-headings sm:text-4xl md:hidden md:text-5xl'>
-            <h2 className={`${jetBrains.className} font-bold`}>Recent</h2>
-            <h2 className={`${jetBrains.className} font-bold`}>Projects.</h2>
+    <section className='mx-auto mt-20 min-h-screen w-full max-w-7xl px-8 pb-20 lg:h-full'>
+      <div className='grid gap-4 lg:grid-cols-3'>
+        <h2 className={`${sourceCode.className} text-4xl font-semibold sm:text-5xl md:text-6xl xl:text-7xl`}>
+          Recent Projects.
+        </h2>
+        <p className='leading-relaxed text-neutral-500 lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:max-w-2xl lg:self-center lg:justify-self-end lg:text-center'>
+          Melalui proyek-proyek terbaru ini, saya terus mengembangkan keterampilan saya dan menggali lebih dalam dalam
+          bidang yang saya minati. Saya bangga dapat berkontribusi pada pencapaian tujuan proyek dan menghadirkan solusi
+          yang membawa manfaat bagi pengguna. Saya berharap bahwa proyek-proyek ini dapat memberikan gambaran tentang
+          kemampuan dan potensi saya dalam menghadapi tantangan proyek mendatang.
+        </p>
+        <a
+          href='https://kalkulator-kesehatan.netlify.app/'
+          target={'_blank'}
+          className='clipped-container aspect-video w-full overflow-hidden rounded-lg lg:row-start-2'
+        >
+          <div
+            className={`${sourceCode.className} clipped bg-neutral-900/5 text-xl font-semibold text-white duration-300 ease-in-out`}
+          >
+            Kalkulator Kesehatan
           </div>
-          <div className='flex h-full w-full snap-x snap-mandatory items-center gap-4 overflow-auto text-light-text md:grid md:snap-none md:grid-cols-2 md:grid-rows-3'>
-            <div className='hidden space-y-4 text-3xl text-light-headings sm:text-4xl md:block md:self-end md:text-5xl'>
-              <h2 className={`${jetBrains.className} font-bold`}>Recent</h2>
-              <h2 className={`${jetBrains.className} font-bold`}>Projects.</h2>
-            </div>
-            <Link
-              href={'/'}
-              className='clipped-container mb-4 aspect-square h-full w-4/5 max-w-sm flex-none snap-center scroll-mx-4 rounded-lg bg-light-secondary md:aspect-auto md:h-[275px] md:w-full md:max-w-none md:translate-y-[166px] md:snap-align-none md:scroll-mx-0'
-            >
-              <div
-                className={`${jetBrains.className} clipped bg-dark-base/25 text-xl font-semibold text-dark-headings duration-300 ease-in-out`}
-              >
-                Nondenoic
-              </div>
-              <div className='aspect-square h-full overflow-hidden rounded-lg md:aspect-auto md:h-[275px]'>
-                <Image src={Nondenoic} alt='Nondenoic' className='h-full w-full object-cover' />
-              </div>
-            </Link>
-            <a
-              href='https://kalkulator-kesehatan.netlify.app/'
-              target={'_blank'}
-              className='clipped-container mb-4 w-4/5 max-w-sm flex-none snap-center scroll-mx-4 overflow-hidden bg-light-secondary md:w-full md:max-w-none md:snap-align-none md:scroll-mx-0'
-            >
-              <div
-                className={`${jetBrains.className} clipped bg-dark-base/25 text-xl font-semibold text-dark-headings duration-300 ease-in-out`}
-              >
-                Kalkulator Kesehatan
-              </div>
-              <div className='aspect-square h-full overflow-hidden rounded-lg md:aspect-auto md:h-[275px]'>
-                <Image src={KalkulatorKesehatan} alt='Kalkulator Kesehatan' className='h-full w-full object-cover' />
-              </div>
-            </a>
-            <a
-              href='https://marketplace.visualstudio.com/items?itemName=TehMatcha.roselia-theme'
-              target={'_blank'}
-              className='clipped-container mb-4 aspect-square h-full w-4/5 max-w-sm flex-none snap-center scroll-mx-4 rounded-lg bg-light-secondary md:aspect-auto md:h-[275px] md:w-full md:max-w-none md:translate-y-[153px] md:snap-align-none md:scroll-mx-0'
-            >
-              <div
-                className={`${jetBrains.className} clipped bg-dark-base/25 text-xl font-semibold text-dark-headings duration-300 ease-in-out`}
-              >
-                Roselia Theme
-              </div>
-              <div className='aspect-square h-full overflow-hidden rounded-lg md:aspect-auto md:h-[275px]'>
-                <Image src={Roselia} alt='Roselia Theme' className='h-full w-full object-cover' />
-              </div>
-            </a>
-            <div
-              className={`${jetBrains.className} hidden font-semibold text-light-headings underline underline-offset-8 md:block md:self-start`}
-            >
-              2023 - now
-            </div>
+          <Image
+            src={KalkulatorKesehatan}
+            alt='Kalkulator Kesehatan'
+            width={720}
+            height={720}
+            className='h-full w-full rounded-lg object-cover'
+          />
+        </a>
+        <div className='clipped-container aspect-video w-full overflow-hidden rounded-lg lg:col-start-2 lg:row-start-3'>
+          <div
+            className={`${sourceCode.className} clipped bg-neutral-900/5 text-xl font-semibold text-white duration-300 ease-in-out`}
+          >
+            Nondenoic
           </div>
+          <Image
+            src={Nondenoic}
+            alt='Nondenoic Portfolio'
+            width={720}
+            height={720}
+            className='h-full w-full rounded-lg object-cover'
+          />
         </div>
-      </section>
-    </div>
+        <div className='clipped-container aspect-video w-full overflow-hidden rounded-lg lg:col-start-3 lg:row-start-4'>
+          <div
+            className={`${sourceCode.className} clipped bg-neutral-900/5 text-xl font-semibold text-white duration-300 ease-in-out`}
+          >
+            Roselia VSCode Theme
+          </div>
+          <Image
+            src={Roselia}
+            alt='Roselia VSCode Theme'
+            width={720}
+            height={720}
+            className='h-full w-full rounded-lg object-cover'
+          />
+        </div>
+        <div className='row-start-3 hidden rounded-lg border border-neutral-200 lg:block'></div>
+        <div className='row-start-4 hidden rounded-lg border border-neutral-200 lg:block'></div>
+        <div className='col-start-2 row-start-4 hidden rounded-lg border border-neutral-200 lg:block'></div>
+      </div>
+    </section>
   );
 }
