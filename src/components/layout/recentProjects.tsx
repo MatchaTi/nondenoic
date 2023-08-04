@@ -38,11 +38,12 @@ export default function RecentProjects() {
           />
         </a>
         <div className='clipped-container aspect-video w-full overflow-hidden rounded-lg lg:col-start-2 lg:row-start-3'>
-          <div
+          <a
+            href='/'
             className={`${sourceCode.className} clipped bg-neutral-900/5 text-xl font-semibold text-white duration-300 ease-in-out`}
           >
             Nondenoic
-          </div>
+          </a>
           <Image
             src={Nondenoic}
             alt='Nondenoic Portfolio'
@@ -51,7 +52,11 @@ export default function RecentProjects() {
             className='h-full w-full rounded-lg object-cover'
           />
         </div>
-        <div className='clipped-container aspect-video w-full overflow-hidden rounded-lg lg:col-start-3 lg:row-start-4'>
+        <a
+          href='https://marketplace.visualstudio.com/items?itemName=TehMatcha.roselia-theme'
+          target={'_blank'}
+          className='clipped-container aspect-video w-full overflow-hidden rounded-lg lg:col-start-3 lg:row-start-4'
+        >
           <div
             className={`${sourceCode.className} clipped bg-neutral-900/5 text-xl font-semibold text-white duration-300 ease-in-out`}
           >
@@ -64,7 +69,7 @@ export default function RecentProjects() {
             height={720}
             className='h-full w-full rounded-lg object-cover'
           />
-        </div>
+        </a>
         <div className='row-start-3 hidden rounded-lg border border-neutral-200 lg:block'></div>
         <div className='row-start-4 hidden rounded-lg border border-neutral-200 lg:block'></div>
         <div className='col-start-2 row-start-4 hidden rounded-lg border border-neutral-200 lg:block'></div>
