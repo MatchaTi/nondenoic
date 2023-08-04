@@ -7,7 +7,7 @@ import { AiFillGithub, AiFillHome } from 'react-icons/ai';
 import { CgClose } from 'react-icons/cg';
 import { FaDonate } from 'react-icons/fa';
 import { FaBarsStaggered } from 'react-icons/fa6';
-import NondenoicIcon from '../../../public/images/nondenoic-icon.svg';
+import NondenoicIcon from '../../../public/images/nondenoic-icon.png';
 
 interface IMenu {
   label: string;
@@ -30,7 +30,7 @@ export default function Sidebar() {
       <div
         className={`${
           isClicked ? 'left-0' : '-left-full'
-        } bg-base-secondary group fixed top-0 z-50 flex min-h-screen  w-full items-center justify-center overflow-y-auto overflow-x-hidden border-dark-accent/10 duration-300 ease-in-out dark:border-light-accent/5`}
+        } group fixed top-0 z-50 flex min-h-screen w-full items-center justify-center overflow-y-auto overflow-x-hidden bg-neutral-100 duration-300 ease-in-out`}
       >
         <ul className='mt-3.5 flex h-full w-fit flex-col space-y-10'>
           {menuItems.map(({ label, href, icon, anchor }, i) => (
@@ -39,7 +39,7 @@ export default function Sidebar() {
                 <a href={href} target='_blank'>
                   <div
                     onClick={() => setIsClicked(false)}
-                    className='relative flex w-fit items-center gap-4 overflow-hidden border-b border-dark-accent/10 pb-2 text-4xl after:absolute after:bottom-0 after:w-full after:-translate-x-[150%] after:border-b after:border-light-text after:duration-300 after:ease-in-out hover:after:translate-x-0 dark:border-dark-accent dark:border-light-accent/5 after:dark:border-dark-text'
+                    className='relative flex w-fit items-center gap-4 overflow-hidden border-b border-neutral-200 pb-2 text-4xl after:absolute after:bottom-0 after:w-full after:-translate-x-[150%] after:border-b after:border-neutral-400 after:duration-300 after:ease-in-out hover:after:translate-x-0'
                   >
                     <span>{icon}</span>
                     <span>{label}</span>
@@ -49,7 +49,7 @@ export default function Sidebar() {
                 <Link href={href}>
                   <div
                     onClick={() => setIsClicked(false)}
-                    className='relative flex w-fit items-center gap-4 overflow-hidden border-b border-dark-accent/10 pb-2 text-4xl after:absolute after:bottom-0 after:w-full after:-translate-x-[150%] after:border-b after:border-light-text after:duration-300 after:ease-in-out hover:after:translate-x-0 dark:border-dark-accent dark:border-light-accent/5 after:dark:border-dark-text'
+                    className='relative flex w-fit items-center gap-4 overflow-hidden border-b border-neutral-200 pb-2 text-4xl after:absolute after:bottom-0 after:w-full after:-translate-x-[150%] after:border-b after:border-neutral-400 after:duration-300 after:ease-in-out hover:after:translate-x-0'
                   >
                     <span>{icon}</span>
                     <span>{label}</span>
@@ -64,7 +64,7 @@ export default function Sidebar() {
         <div className='flex items-center justify-between'>
           <Link href={'/'} onClick={() => setIsClicked(false)}>
             <div className='h-10 w-10 rounded'>
-              <Image src={NondenoicIcon} alt='Nondenoic Icon' />
+              <Image src={NondenoicIcon} alt='Nondenoic Icon' className='rounded' />
             </div>
           </Link>
           <button type='button' onClick={() => setIsClicked(!isClicked)}>
