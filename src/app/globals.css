@@ -3,17 +3,14 @@
 @tailwind utilities;
 
 @layer components {
-  .bg-base {
-    @apply bg-light-base dark:bg-dark-base;
-  }
-
-  .bg-base-secondary {
-    @apply bg-light-secondary dark:bg-dark-secondary;
-  }
 }
 
 .clipped-container {
   @apply relative;
+}
+
+.text-balance {
+  text-wrap: balance;
 }
 
 .clipped {
@@ -46,7 +43,7 @@
 }
 
 .custom-prose {
-  @apply prose prose-neutral max-w-full text-justify dark:prose-invert prose-a:text-nondenoic-main prose-a:underline-offset-4;
+  @apply prose prose-neutral max-w-full text-justify prose-a:text-nondenoic-main prose-a:underline-offset-4;
 }
 
 @layer utilities {
