@@ -14,9 +14,13 @@ export default function Portfolio() {
           visual yang menarik dengan interaksi yang halus dan menciptakan tampilan web yang menarik, modern, dan
           fungsional untuk meningkatkan kepuasan pengguna.
         </p>
-        <p className={`${sourceCode.className} text-left font-semibold underline underline-offset-8`}>
-          Scroll for more
-        </p>
+        <a
+          href={'/files/Adi_Muhammad_Syifai_CV.pdf'}
+          download
+          className={`${sourceCode.className} text-left font-semibold underline underline-offset-8`}
+        >
+          View Resume
+        </a>
       </div>
       <div className='relative hidden justify-self-end pl-4 lg:block'>
         <div className='absolute left-0 top-0 -z-10 w-full pl-4'>
